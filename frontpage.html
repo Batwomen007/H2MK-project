@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration (Front-End Only)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 50px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, button, label, select {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .error {
+      color: red;
+      font-size: 0.9em;
+    }
+    .success {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2>User Registration</h2>
+  <form id="registrationForm">
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name">
+    <div class="error" id="nameError"></div><label for="email">Email:</label>
+<input type="email" id="email" name="email">
+<div class="error" id="emailError"></div>
+
+<label for="phone">Phone Number:</label>
+<input type="text" id="phone" name="phone">
+<div class="error" id="phoneError"></div>
+
+<label for="password">Password:</label>
+<input type="password" id="password" name="password">
+<div class="error" id="passwordError"></div>
+
+<label for="file">Upload KYC Document:</label>
+<input type="file" id="file" name="file" accept=".jpg,.jpeg,.png,.pdf">
+<div class="error" id="fileError"></div>
+
+<button type="submit">Register</button>
+<button type="button" onclick="resetForm()">Clear</button>
+
+  </form>
+  <div id="successMessage" class="success"></div>
+</div><script

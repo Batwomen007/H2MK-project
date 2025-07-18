@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Step 4: Email Verification</title>
+  <style>
+    :root {
+      --peach: #ffb997;
+      --peach-dark: #f67e7d;
+      --text-dark: #4b2e2e;
+      --bg-light: #fff5f0;
+    }
+
+    body {
+      background-color: var(--bg-light);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: white;
+      border-radius: 12px;
+      padding: 40px;
+      width: 400px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: var(--text-dark);
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #5f4545;
+      margin-bottom: 10px;
+      font-size: 1em;
+    }
+
+    a.resend {
+      display: inline-block;
+      margin-top: 15px;
+      color: var(--peach-dark);
+      font-weight: bold;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    button {
+      background-color: var(--peach-dark);
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 30px;
+      font-size: 1em;
+    }
+
+    button:hover {
+      background-color: var(--text-dark);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Email Verification</h2>
+    <p>Please check your email for a verification link.</p>
+    <p>If you didn't receive it, <a href="#" class="resend">Resend Link</a></p>
+    <a href="step5.html"><button>Next</button></a>
+  </div>
+</body>
+</html>

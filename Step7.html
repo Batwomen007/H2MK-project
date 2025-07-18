@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Step 7: Profile Page</title>
+  <style>
+    :root {
+      --peach: #ffb997;
+      --peach-dark: #f67e7d;
+      --text-dark: #4b2e2e;
+      --bg-light: #fff5f0;
+    }
+
+    body {
+      background-color: var(--bg-light);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 500px;
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+    }
+
+    .profile-photo {
+      width: 100px;
+      height: 100px;
+      background-color: #ddd;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+    }
+
+    .info {
+      margin: 10px 0;
+      padding: 10px;
+      background-color: var(--peach);
+      border-radius: 8px;
+      font-weight: bold;
+      color: var(--text-dark);
+    }
+
+    .next-button {
+      margin-top: 20px;
+      background-color: var(--peach-dark);
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .next-button:hover {
+      background-color: var(--text-dark);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>User Profile</h2>
+    <div class="profile-photo"></div>
+    <div class="info">Full Name: Harini Suresh</div>
+    <div class="info">DOB: 15/08/2002</div>
+    <div class="info">Email: harini@example.com</div>
+    <div class="info">Account Number: 123456789012</div>
+    <form action="step8.html" method="GET">
+      <button class="next-button" type="submit">Next</button>
+    </form>
+  </div>
+</body>
+</html>

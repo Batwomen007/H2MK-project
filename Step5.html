@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Step 5: Account Activation</title>
+  <style>
+    :root {
+      --peach: #ffb997;
+      --peach-dark: #f67e7d;
+      --text-dark: #4b2e2e;
+      --bg-light: #fff5f0;
+    }
+
+    body {
+      background-color: var(--bg-light);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: white;
+      border-radius: 12px;
+      padding: 35px;
+      width: 400px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #5f4545;
+      font-size: 1em;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+
+    button {
+      width: 100%;
+      background-color: var(--peach-dark);
+      color: white;
+      padding: 12px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: var(--text-dark);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Registration Successful!</h2>
+    <p>You can now log in using your credentials below.</p>
+    <form action="step6.html" method="GET">
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <button type="submit">Go to Login</button>
+    </form>
+  </div>
+</body>
+</html>

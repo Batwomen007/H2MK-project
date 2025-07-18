@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Step 6: Welcome Page</title>
+  <style>
+    :root {
+      --peach: #ffb997;
+      --peach-dark: #f67e7d;
+      --text-dark: #4b2e2e;
+      --bg-light: #fff5f0;
+    }
+
+    body {
+      background-color: var(--bg-light);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: white;
+      border-radius: 12px;
+      padding: 30px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h2 {
+      color: var(--text-dark);
+      margin-bottom: 20px;
+    }
+
+    .actions {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .action {
+      background-color: var(--peach);
+      padding: 20px;
+      border-radius: 10px;
+      color: var(--text-dark);
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .action:hover {
+      background-color: var(--peach-dark);
+      color: white;
+    }
+
+    .next-button {
+      margin-top: 30px;
+      background-color: var(--peach-dark);
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    .next-button:hover {
+      background-color: var(--text-dark);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Welcome to Bank of H2MK</h2>
+    <div class="actions">
+      <div class="action">Transfer via Phone</div>
+      <div class="action">Account Transfer</div>
+      <div class="action">Scan QR Code</div>
+      <div class="action">View Balance</div>
+    </div>
+    <form action="step7.html" method="GET">
+      <button class="next-button" type="submit">Next</button>
+    </form>
+  </div>
+</body>
+</html>

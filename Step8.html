@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Step 8: Account Deactivation</title>
+  <style>
+    :root {
+      --peach: #ffb997;
+      --peach-dark: #f67e7d;
+      --text-dark: #4b2e2e;
+      --bg-light: #fff5f0;
+      --danger: #c0392b;
+    }
+
+    body {
+      background-color: var(--bg-light);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    h2 {
+      color: var(--text-dark);
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: var(--danger);
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #96281b;
+    }
+
+    .popup {
+      display: none;
+      background-color: white;
+      border: 2px solid var(--danger);
+      padding: 20px;
+      border-radius: 10px;
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .popup h3 {
+      color: var(--danger);
+      margin-bottom: 15px;
+    }
+
+    .popup-buttons {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 15px;
+    }
+
+    .popup-buttons button {
+      width: 120px;
+    }
+
+    .flow-chart {
+      display: none;
+      margin-top: 30px;
+      font-weight: bold;
+      color: var(--text-dark);
+    }
+
+    .arrow {
+      margin: 10px 0;
+    }
+
+    #success {
+      display: none;
+      color: green;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay" id="overlay"></div>
+  <div class="popup" id="popup">
+    <h3>You'll lose your account details permanently!</h3>
+    <div class="popup-buttons">
+      <button onclick="deactivate()">Yes, Deactivate</button>
+      <button onclick="cancel()">Cancel</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Account Deactivation</h2>
+    <button onclick="showPopup()">Deactivate Account</button>
+
+    <div class="flow-chart" id="flow">
+      <div>Request Received</div>
+      <div class="arrow">↓</div>
+      <div>Processing</div>
+      <div class="arrow">↓</div>
+      <div>Deactivated</div>
+    </div>
+
+    <div id="success">✅ Account Terminated Successfully</div>
+  </div>
+
+  <script>
+    function showPopup() {
+      document.getElementById("popup").style.display = "block";
+      document.getElementById("overlay").style.display = "block";
+    }
+
+    function cancel() {
+      document.getElementById("popup").style.display = "none";
+      document.getElementById("overlay").style.display = "none";
+    }
+
+    function deactivate() {
+      document.getElementById("popup").style.display = "none";
+      document.getElementById("overlay").style.display = "none";
+      document.getElementById("flow").style.display = "block";
+
+      setTimeout(() => {
+        document.getElementById("success").style.display = "block";
+      }, 2500);
+    }
+  </script>
+</body>
+</html>

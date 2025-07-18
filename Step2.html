@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Step 2: Input Validation</title>
+  <style>
+    :root {
+      --peach: #ffb997;
+      --peach-dark: #f67e7d;
+      --text-dark: #4b2e2e;
+      --bg-light: #fff5f0;
+      --error-color: #e74c3c;
+    }
+    body {
+      background-color: var(--bg-light);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      width: 400px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+      color: var(--text-dark);
+    }
+    .input-group {
+      margin: 12px 0;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--text-dark);
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+    .error {
+      color: var(--error-color);
+      font-size: 0.9em;
+      display: none;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: var(--peach-dark);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: var(--text-dark);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Step 2: Validate Your Details</h2>
+    <form id="validationForm">
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+        <div class="error" id="emailError">Invalid email format</div>
+      </div>
+      <div class="input-group">
+        <label for="phone">Phone Number</label>
+        <input type="text" id="phone" maxlength="10" required>
+        <div class="error" id="phoneError">Phone must be 10 digits</div>
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required>
+        <div class="error" id="passwordError">Password must be at least 6 characters</div>
+      </div>
+      <button type="submit">Next</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('validationForm');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      let isValid = true;
+
+      const email = document.getElementById('email');
+      const phone = document.getElementById('phone');
+      const password = document.getElementById('password');
+
+      const emailError = document.getElementById('emailError');
+      const phoneError = document.getElementById('phoneError');
+      const passwordError = document.getElementById('passwordError');
+
+      emailError.style.display = 'none';
+      phoneError.style.display = 'none';
+      passwordError.style.display = 'none';
+
+      if (!email.value.includes('@')) {
+        emailError.style.display = 'block';
+        isValid = false;
+      }
+
+      if (phone.value.length !== 10 || isNaN(phone.value)) {
+        phoneError.style.display = 'block';
+        isValid = false;
+      }
+
+      if (password.value.length < 6) {
+        passwordError.style.display = 'block';
+        isValid = false;
+      }
+
+      if (isValid) {
+        window.location.href = "step3.html";
+      }
+    });
+  </script>
+</body>
+</html>

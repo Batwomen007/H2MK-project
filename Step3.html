@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Step 3: Upload Documents</title>
+  <style>
+    :root {
+      --peach: #ffb997;
+      --peach-dark: #f67e7d;
+      --text-dark: #4b2e2e;
+      --bg-light: #fff5f0;
+    }
+
+    body {
+      background-color: var(--bg-light);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: white;
+      border-radius: 12px;
+      padding: 30px;
+      width: 400px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h2 {
+      color: var(--text-dark);
+    }
+
+    input[type="file"] {
+      display: block;
+      margin: 20px auto;
+      padding: 10px;
+    }
+
+    .file-info, .upload-success {
+      margin-top: 10px;
+      font-size: 0.95em;
+      color: var(--text-dark);
+    }
+
+    .upload-success {
+      color: green;
+      font-weight: bold;
+    }
+
+    button {
+      background-color: var(--peach-dark);
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+      font-size: 1em;
+    }
+
+    button:hover {
+      background-color: var(--text-dark);
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Step 3: Upload Documents</h2>
+    <input type="file" id="docInput" />
+    <div class="file-info" id="fileInfo"></div>
+    <div class="upload-success" id="uploadSuccess"></div>
+
+    <a href="step4.html">
+      <button type="button">Next</button>
+    </a>
+  </div>
+
+  <script>
+    const docInput = document.getElementById("docInput");
+    const fileInfo = document.getElementById("fileInfo");
+    const uploadSuccess = document.getElementById("uploadSuccess");
+
+    docInput.addEventListener("change", () => {
+      const file = docInput.files[0];
+      if (file) {
+        fileInfo.innerHTML = `File: <strong>${file.name}</strong> (${(file.size / 1024).toFixed(2)} KB)`;
+        uploadSuccess.textContent = "Upload successful!";
+      } else {
+        fileInfo.innerHTML = "";
+        uploadSuccess.textContent = "";
+      }
+    });
+  </script>
+</body>
+</html>
